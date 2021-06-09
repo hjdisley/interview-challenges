@@ -19,10 +19,34 @@ body {
 .Container {
   align-items: center;
   background-color: rgb(62, 126, 184);
-  border-radius: 25px;
+  border-radius: 60px;
   color: white;
   display: flex;
   flex-direction: column;
   font-weight: bold;
   padding: 40px;
+  height: 40rem;
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.NavBar {
+  position: absolute;
+  bottom: 5rem;
+}
+
+.NavBar ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.NavBar ul li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  list-style: none;
+}
+
+.Emojis {
+  display: flex;
 }
