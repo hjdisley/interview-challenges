@@ -4,56 +4,101 @@ import HomeIcon from '@material-ui/icons/Home';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import MailIcon from '@material-ui/icons/Mail';
 import PersonIcon from '@material-ui/icons/Person';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
+import HearingIcon from '@material-ui/icons/Hearing';
+import SearchIcon from '@material-ui/icons/Search';
 
 function App() {
   return (
     <div className="App">
       <div className="Container">
-        <div className="TopContent">
-          <h2>Hi Jared!</h2>
-          <h3>23 Jan, 2021</h3>
-          <div className="NotificationButton">
+        <div className="Row">
+          <div className="Column Left">
+            <h2>Hi, Jared!</h2>
+            <p>23 Jan, 2021</p>
+          </div>
+          <div className="Column Right">
             <NotificationsIcon />
           </div>
         </div>
         <div className="SearchBar">
           <input type="text" placeholder="Search" />
+          <SearchIcon />
         </div>
-        <div className="HowDoYouFeel">
-          <h3>How do you feel?</h3>
-          <div className="Emojis">
-            <div>
-              <p>😔</p>
-              <p>Badly</p>
-            </div>
-            <div>
-              <p>😊</p>
-              <p>Fine</p>
-            </div>
-            <div>
-              <p>😁</p>
-              <p>Well</p>
-            </div>
-            <div>
-              <p>😃</p>
-              <p>Excellent</p>
-            </div>
+        <div className="Row Feel">
+          <div className="Column Left">
+            <h3 style={{ paddingLeft: '18px' }}>How do you feel?</h3>
           </div>
+          <div className="Column SeeMore Right">
+            <MoreHorizIcon />
+          </div>
+        </div>
+        <div className="Emojis">
+          <table className="FeelingTable" cellSpacing="18">
+            <thead>
+              <th>😔</th>
+              <th>😊</th>
+              <th>😁</th>
+              <th>😃</th>
+            </thead>
+            <tbody>
+              <td>Badly</td>
+              <td>Fine</td>
+              <td>Well</td>
+              <td>Excellent</td>
+            </tbody>
+          </table>
         </div>
         <div className="Modal">
-          <h3>Exercises</h3>
-          <div>
-            <h3>Speaking Skills</h3>
-            <p>16 exercises</p>
+          <div className="Minimise"></div>
+          <div className="ModalTitle">
+            <h3>Exercises</h3>
+            <MoreHorizIcon />
           </div>
-          <div>
-            <h3>Reading Speed</h3>
-            <p>8 exercises</p>
-          </div>
-          {/* <div>
-            <h3>Hearing Exercises</h3>
-            <p>9 exercises</p>
-          </div> */}
+          <button className="CardRow">
+            <div className="CardColumn">
+              <FavoriteIcon
+                style={{ color: 'white', backgroundColor: 'orange' }}
+              />
+            </div>
+            <div className="CardColumn">
+              <h3>Speaking Skills</h3>
+              <p>16 Exercises</p>
+            </div>
+            <div className="CardColumn">
+              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            </div>
+          </button>
+          <button className="CardRow">
+            <div className="CardColumn">
+              <RecordVoiceOverIcon
+                style={{ color: 'white', backgroundColor: '#2c80be' }}
+              />
+            </div>
+            <div className="CardColumn">
+              <h3>Reading Speed</h3>
+              <p>8 Exercises</p>
+            </div>
+            <div className="CardColumn">
+              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            </div>
+          </button>
+          <button className="CardRow">
+            <div className="CardColumn">
+              <HearingIcon
+                style={{ color: 'white', backgroundColor: '#f95b7d' }}
+              />
+            </div>
+            <div className="CardColumn">
+              <h3>Reading Speed</h3>
+              <p>8 Exercises</p>
+            </div>
+            <div className="CardColumn">
+              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            </div>
+          </button>
         </div>
         <div className="NavBar">
           <ul>

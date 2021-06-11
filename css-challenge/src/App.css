@@ -24,15 +24,224 @@ body {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  padding: 40px;
-  height: 40rem;
-  width: 30rem;
+  height: 896px;
+  width: 414px;
   margin: 0 auto;
+  position: relative;
+}
+
+.Row {
+  width: 414px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  margin-bottom: 19px;
+}
+
+.Column {
+  float: left;
+  padding: 10px;
+}
+
+.Left {
+  width: 85%;
+}
+
+.Left h2 {
+  margin-bottom: 5px;
+}
+
+.Left p {
+  margin-top: 7px;
+  font-size: 11px;
+  color: rgb(182, 182, 182);
+}
+
+.Right {
+  width: 15%;
+  background: #3f8dc5;
+  border-radius: 16px;
+  margin-top: 35px;
+}
+
+.Row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.SearchBar {
+  position: relative;
+}
+
+.SearchBar input {
+  background-color: #3f8dc5;
+  width: 310px;
+  height: 46px;
+  border-radius: 15px;
+  border: none;
+  padding: 23px;
+  font-size: 18px;
+}
+
+.SearchBar svg {
+  position: absolute;
+  left: 11px;
+  top: 13px;
+}
+
+.SearchBar input::placeholder {
+  color: white;
+  padding-left: 15px;
+}
+
+.SeeMore {
+  background: none !important;
+  margin-top: 14px !important;
+}
+
+.Feel {
+  margin-right: 33px !important;
+  margin-bottom: 0 !important;
+}
+
+.Feel h3 {
+  margin-bottom: 0 !important;
+  font-size: 15px;
+}
+
+.FeelingTable {
+  width: 437px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 35px;
+}
+
+.FeelingTable th {
+  font-size: 30px;
+  background-color: #3f8dc5;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.FeelingTable td {
+  text-align: center;
+  width: 25%;
+  font-size: 12px;
+}
+
+.Minimise {
+  height: 8px;
+  margin-top: 10px;
+  margin-left: 45%;
+  margin-right: 45%;
+  background: #c8dbf7;
+  border-radius: 30px;
+}
+
+.Modal {
+  background-color: white;
+  width: 414px;
+  height: 405px;
+  border-top-right-radius: 55px;
+  border-top-left-radius: 55px;
+  color: black;
+  overflow-y: auto;
+}
+
+.ModalCard {
+  width: 414px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  margin-bottom: 19px;
+}
+
+.CardColumn {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 86px;
+}
+
+.CardColumn h3 {
+  font-size: 11px;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.CardColumn p {
+  font-size: 11px;
+  color: rgb(145 145 145);
+  margin-top: -4px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.CardColumn svg {
+  padding: 4px;
+  margin: 10px;
+  height: 40px;
+  margin-left: 23px;
+  width: 40px;
+  border-radius: 10px;
+}
+
+.CardRow {
+  border: 1px solid #e6e3e3;
+  background-color: white;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width: 78%;
+}
+
+.CardRow:focus {
+  border: none;
+  box-shadow: 8px 14px 47px 3px rgba(130, 130, 130, 0.6);
+}
+
+.CardRow:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.Minimise svg {
+  color: #d1dfff;
+  padding-left: 10px;
+  margin-left: 45%;
+  width: 34px;
+  height: 36px;
+}
+
+.ModalTitle {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ModalTitle h3 {
+  font-size: 13px;
+}
+
+.ModalTitle svg {
+  font-size: 30px;
+  margin-top: 16px;
+}
+
+.ModalCard {
+  border: 1px solid black;
 }
 
 .NavBar {
   position: absolute;
-  bottom: 5rem;
+  bottom: 0;
+  background-color: white;
+  padding: 31px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  width: 414px;
 }
 
 .NavBar ul {
@@ -42,9 +251,14 @@ body {
 }
 
 .NavBar ul li {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   list-style: none;
+}
+
+.NavBar ul li svg {
+  font-size: 40px;
+  color: rgb(62, 126, 184);
 }
 
 .Emojis {
