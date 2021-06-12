@@ -4,7 +4,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import MailIcon from '@material-ui/icons/Mail';
 import PersonIcon from '@material-ui/icons/Person';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import HearingIcon from '@material-ui/icons/Hearing';
@@ -14,12 +13,12 @@ function App() {
   return (
     <div className="App">
       <div className="Container">
-        <div className="Row">
-          <div className="Column Left">
+        <div className="Heading Row">
+          <div className="Heading Column Left">
             <h2>Hi, Jared!</h2>
             <p>23 Jan, 2021</p>
           </div>
-          <div className="Column Right">
+          <div className="Heading Column Right">
             <NotificationsIcon />
           </div>
         </div>
@@ -27,13 +26,11 @@ function App() {
           <input type="text" placeholder="Search" />
           <SearchIcon />
         </div>
-        <div className="Row Feel">
+        <div className="Feelings Row">
           <div className="Column Left">
             <h3 style={{ paddingLeft: '18px' }}>How do you feel?</h3>
           </div>
-          <div className="Column SeeMore Right">
-            <MoreHorizIcon />
-          </div>
+          <div className="Column SeeMore Right">. .</div>
         </div>
         <div className="Emojis">
           <table className="FeelingTable" cellSpacing="18">
@@ -52,10 +49,10 @@ function App() {
           </table>
         </div>
         <div className="Modal">
-          <div className="Minimise"></div>
+          <div className="MinimiseSymbol"></div>
           <div className="ModalTitle">
             <h3>Exercises</h3>
-            <MoreHorizIcon />
+            <p>. .</p>
           </div>
           <button className="CardRow">
             <div className="CardColumn">
@@ -67,8 +64,15 @@ function App() {
               <h3>Speaking Skills</h3>
               <p>16 Exercises</p>
             </div>
-            <div className="CardColumn">
-              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            <div
+              className="CardColumn"
+              style={{
+                fontSize: '30px',
+                fontWeight: 'bolder',
+                paddingTop: '14px',
+              }}
+            >
+              . .
             </div>
           </button>
           <button className="CardRow">
@@ -81,8 +85,15 @@ function App() {
               <h3>Reading Speed</h3>
               <p>8 Exercises</p>
             </div>
-            <div className="CardColumn">
-              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            <div
+              className="CardColumn"
+              style={{
+                fontSize: '30px',
+                fontWeight: 'bolder',
+                paddingTop: '14px',
+              }}
+            >
+              . .
             </div>
           </button>
           <button className="CardRow">
@@ -95,8 +106,15 @@ function App() {
               <h3>Sound Speed</h3>
               <p>8 Exercises</p>
             </div>
-            <div className="CardColumn">
-              <MoreHorizIcon style={{ height: '30px', width: '30px' }} />
+            <div
+              className="CardColumn"
+              style={{
+                fontSize: '30px',
+                fontWeight: 'bolder',
+                paddingTop: '14px',
+              }}
+            >
+              . .
             </div>
           </button>
         </div>

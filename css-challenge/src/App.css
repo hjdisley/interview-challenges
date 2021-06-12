@@ -104,10 +104,11 @@ body {
 
 .SeeMore {
   background: none !important;
-  margin-top: 14px !important;
+  margin-top: 2px !important;
+  font-size: 30px;
 }
 
-.Feel {
+.Feelings {
   margin-right: 33px !important;
   margin-bottom: 0 !important;
   padding-top: 40px;
@@ -138,7 +139,7 @@ body {
   font-size: 12px;
 }
 
-.Minimise {
+.MinimiseSymbol {
   height: 8px;
   margin-top: 15px;
   margin-left: 45%;
@@ -154,7 +155,7 @@ body {
   border-top-right-radius: 55px;
   border-top-left-radius: 55px;
   color: black;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .ModalCard {
@@ -200,7 +201,7 @@ body {
   background-color: white;
   margin-left: 40px;
   margin-right: 40px;
-  margin-top: 10px;
+  margin-bottom: 7px;
   border-radius: 20px;
   width: 81%;
 }
@@ -227,6 +228,11 @@ body {
 .ModalTitle {
   display: flex;
   justify-content: space-around;
+}
+
+.ModalTitle p {
+  font-size: 30px;
+  margin-top: -4px;
 }
 
 .ModalTitle h3 {
