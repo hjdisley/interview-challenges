@@ -92,7 +92,7 @@ function App() {
               />
             </div>
             <div className="CardColumn">
-              <h3>Reading Speed</h3>
+              <h3>Sound Speed</h3>
               <p>8 Exercises</p>
             </div>
             <div className="CardColumn">
@@ -101,6 +101,7 @@ function App() {
           </button>
         </div>
         <div className="NavBar">
+          <div className="SelectedTab"></div>
           <ul>
             <li>
               <HomeIcon />

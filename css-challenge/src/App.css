@@ -48,7 +48,8 @@ body {
 }
 
 .Left h2 {
-  margin-bottom: 5px;
+  margin-bottom: 11px;
+  margin-top: 21px;
 }
 
 .Left p {
@@ -72,6 +73,7 @@ body {
 
 .SearchBar {
   position: relative;
+  padding-top: 8px;
 }
 
 .SearchBar input {
@@ -82,17 +84,22 @@ body {
   border: none;
   padding: 23px;
   font-size: 18px;
+  padding-left: 40px;
 }
 
 .SearchBar svg {
   position: absolute;
   left: 11px;
-  top: 13px;
+  top: 19px;
+}
+
+.SearchBar ::-moz-placeholder {
+  color: white;
+  opacity: 1;
 }
 
 .SearchBar input::placeholder {
   color: white;
-  padding-left: 15px;
 }
 
 .SeeMore {
@@ -103,6 +110,7 @@ body {
 .Feel {
   margin-right: 33px !important;
   margin-bottom: 0 !important;
+  padding-top: 40px;
 }
 
 .Feel h3 {
@@ -132,7 +140,7 @@ body {
 
 .Minimise {
   height: 8px;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 45%;
   margin-right: 45%;
   background: #c8dbf7;
@@ -142,7 +150,7 @@ body {
 .Modal {
   background-color: white;
   width: 414px;
-  height: 405px;
+  height: 350px;
   border-top-right-radius: 55px;
   border-top-left-radius: 55px;
   color: black;
@@ -194,7 +202,7 @@ body {
   margin-right: 40px;
   margin-top: 10px;
   border-radius: 20px;
-  width: 78%;
+  width: 81%;
 }
 
 .CardRow:focus {
@@ -259,6 +267,23 @@ body {
 .NavBar ul li svg {
   font-size: 40px;
   color: rgb(62, 126, 184);
+}
+
+.SelectedTab {
+  position: absolute;
+  bottom: 0px;
+  left: 69px;
+  height: 20px;
+  width: 10px;
+  background: rgb(62, 126, 184);
+  position: absolute;
+  bottom: 0px;
+  left: 69px;
+  height: 20px;
+  width: 10px;
+  background: rgb(62, 126, 184);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
 }
 
 .Emojis {
