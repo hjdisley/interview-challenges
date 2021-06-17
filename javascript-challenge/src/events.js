@@ -1,4 +1,4 @@
-/** 
+/**
   An event could look like this:
   ```
   {
@@ -30,8 +30,51 @@
 
  Your solution should not modify any of the function arguments
 */
+
+/**
+ SOLUTION
+
+ [X] CHECK IF INPUT IS AN ARRAY
+ [X] SORT EVENTS ARRAY EARLIEST TO LATEST
+ [X] TAKE THE EARLIEST EVENT AND INITIALISE THE RESULT OBJECT WITH THAT AS THE FIRST KEY
+ [X] FOR EACH REMAINING EVEN GET ITS DATE DIFFERENCE
+ [X] IF THE DATE DIFFERENCE DOESNT EXIST IN THE OBJECT START A NEW ARRAY WITH DATE DIFFERENCE AS THE KEY
+ [X] PUSH THAT EVENT INTO THE NEWLY INITIALISED ARRAY
+ [X] OTHERWISE PUSH THE EVENT INTO THE ARRAY WHERE DATE DIFFERENCE DOES EXIST
+
+ */
+
+const differenceInDays = require('date-fns/differenceInDays');
+
 const groupEventsByDay = (events) => {
-  return events;
+  if (!Array.isArray(events)) {
+    throw new Error('Data is formatted incorrectly!');
+  }
+
+  const sortedData = events.sort(
+    (a, b) => new Date(a.startsAt) - new Date(b.startsAt),
+  );
+
+  const earliestDate = sortedData.splice(0, 1);
+
+  const resultObj = {
+    0: earliestDate,
+  };
+
+  sortedData.forEach((event) => {
+    const dateDifference = differenceInDays(
+      new Date(event.startsAt),
+      new Date(resultObj['0'][0].startsAt),
+    );
+
+    if (!resultObj[dateDifference]) {
+      resultObj[dateDifference] = [];
+      resultObj[dateDifference].push(event);
+    } else {
+      resultObj[dateDifference].push(event);
+    }
+  });
+  return resultObj;
 };
 
 /** 
@@ -41,7 +84,7 @@ const groupEventsByDay = (events) => {
   `toDay` will be a number that indicates the key of `eventsByDay` that the target event should be moved to
 
   Example:
-  ```
+  ```S
   eventsByDay(
     {
       0: [
@@ -69,6 +112,9 @@ const groupEventsByDay = (events) => {
 
   Your solution should not modify any of the function arguments
 */
+
 const moveEventToDay = (eventsByDay, id, toDay) => {
   return eventsByDay;
 };
+
+module.exports = { groupEventsByDay, moveEventToDay };
