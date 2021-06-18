@@ -131,8 +131,35 @@ describe('groupEventsByDay', () => {
     );
   });
   it('throws error when event data is invalid', () => {
-    expect(groupEventsByDay('hello')).toThrowError();
+    expect(groupEventsByDay('hello')).toThrow(Error);
   });
 });
 
-// test('groupEventsByDay', () => {});
+describe('moveEventToDay', () => {
+  it('returns an object when passed an object', () => {
+    expect(
+      typeof moveEventToDay(
+        {
+          0: [
+            {
+              id: 106,
+              startsAt: '2021-01-27T13:01:11Z',
+              endsAt: '2021-01-27T15:01:11Z',
+              title: 'Daily walk',
+            },
+          ],
+          2: [
+            {
+              id: 5676,
+              startsAt: '2021-01-29T13:01:11Z',
+              endsAt: '2021-01-29T15:01:11Z',
+              title: 'Daily walk',
+            },
+          ],
+        },
+        5676,
+        3,
+      ),
+    ).toBe('object');
+  });
+});

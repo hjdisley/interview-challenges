@@ -51,7 +51,9 @@ const groupEventsByDay = (events) => {
     throw new Error('Data is formatted incorrectly!');
   }
 
-  const sortedData = events.sort(
+  const eventsCopy = [...events];
+
+  const sortedData = eventsCopy.sort(
     (a, b) => new Date(a.startsAt) - new Date(b.startsAt),
   );
 
@@ -113,8 +115,46 @@ const groupEventsByDay = (events) => {
   Your solution should not modify any of the function arguments
 */
 
+/**
+
+
+
+*/
+
+const moment = require('moment');
+
 const moveEventToDay = (eventsByDay, id, toDay) => {
-  return eventsByDay;
+  const eventsCopy = { ...eventsByDay };
+
+  Object.keys(eventsCopy).forEach((key) => {
+    const eventToChange = eventsCopy[key].filter((event) => event.id == id);
+    const otherEvents = Array.from(
+      eventsCopy[key].filter((event) => event.id !== id),
+    );
+
+    if (eventToChange.length) {
+      const dateDifference = toDay - key;
+      const startingDate = eventToChange[0].startsAt;
+      const changedEvent = {
+        id: eventsCopy[key].id,
+        startsAt: new Date(moment(startingDate).add(dateDifference, 'days')),
+        endsAt: new Date(moment(startingDate).add(dateDifference, 'days')),
+        title: eventsCopy[key].title,
+      };
+      const changedEventObject = {
+        ...otherEvents,
+        changedEvent,
+      };
+
+      if (eventsCopy[toDay]) {
+        eventsCopy[toDay].push(changedEventObject);
+      } else {
+        [eventsCopy[toDay]];
+      }
+    }
+  });
+  console.log(changedEventObject);
+  return eventsCopy;
 };
 
 module.exports = { groupEventsByDay, moveEventToDay };
