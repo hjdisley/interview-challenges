@@ -116,44 +116,64 @@ const groupEventsByDay = (events) => {
 */
 
 /**
+SOLUTION
 
-
-
+[X] MAKE A COPY OF THE OBJECT
+[X] LOOP THROUGH EVENTS
+[x] FIND FIND THE INSTANCE OF THE ID PASSED IN WITHIN THE OBJECT
+[] FIND OTHER EVENTS IN THE OBJECT AND CREATE A NEW OBJECT FROM THEM WITH THE ID REMOVED
+[] ADD A NEW KEY WHICH IS toDay AND CREATE AN ARRAY AS ITS VALUE
+[] PUSH THE EVENT INTO THAT ARRAY
+ 
 */
 
 const moment = require('moment');
 
 const moveEventToDay = (eventsByDay, id, toDay) => {
+  // CHECK THE FORMAT OF DATA PASSED IN
+  if (typeof eventsByDay !== 'object') {
+    throw new Error('Data is formatted incorrectly!');
+  }
+
+  // MAKE A COPY OF THE OBJECT
   const eventsCopy = { ...eventsByDay };
 
-  Object.keys(eventsCopy).forEach((key) => {
-    const eventToChange = eventsCopy[key].filter((event) => event.id == id);
-    const otherEvents = Array.from(
-      eventsCopy[key].filter((event) => event.id !== id),
+  Object.keys(eventsCopy).forEach((eventKey) => {
+    // CREATE AN ARRAY WITH EVENT THAT NEEDS CHANGING
+    const eventToChange = eventsCopy[eventKey].filter(
+      (event) => event.id == id,
     );
+    // CREATE ARRAY FROM OTHER EVENTS
+    const otherEvents = eventsCopy[eventKey].filter((event) => event.id != id);
 
-    if (eventToChange.length) {
-      const dateDifference = toDay - key;
-      const startingDate = eventToChange[0].startsAt;
-      const changedEvent = {
-        id: eventsCopy[key].id,
-        startsAt: new Date(moment(startingDate).add(dateDifference, 'days')),
-        endsAt: new Date(moment(startingDate).add(dateDifference, 'days')),
-        title: eventsCopy[key].title,
-      };
-      const changedEventObject = {
-        ...otherEvents,
-        changedEvent,
-      };
+    // STORE THE OTHER EVENTS IN THE OBJECT AT THEIR KEY
+    eventsCopy[eventKey] = Array.from(otherEvents);
 
-      if (eventsCopy[toDay]) {
-        eventsCopy[toDay].push(changedEventObject);
-      } else {
-        [eventsCopy[toDay]];
-      }
+    // REMOVE THE UNCHANGED EVENT FROM OBJECT
+    if (eventsCopy[eventKey].length <= 0) {
+      delete eventsCopy[eventKey];
+    }
+
+    // FIND THE NEW KEY
+    if (eventToChange.length >= 1) {
+      const dateDiff = toDay - eventKey;
+      // CREATE THE NEW OBJECT
+      const updatedEvent = {
+        id: eventToChange[0].id,
+        // UPDATE WITH NEW DATES
+        startsAt: new Date(
+          moment(eventToChange[0].startsAt).add(dateDiff, 'days'),
+        ).toISOString(),
+        // UPDATE WITH NEW DATES
+        endsAt: new Date(
+          moment(eventToChange[0].startsAt).add(dateDiff, 'days'),
+        ).toISOString(),
+        title: eventToChange[0].title,
+      };
+      // CREATE A NEW ARRAY AT THE KEY PASSED IN AS ARGUMENT WITH UPDATED OBJECT
+      eventsCopy[toDay] = new Array(updatedEvent);
     }
   });
-  console.log(changedEventObject);
   return eventsCopy;
 };
 
