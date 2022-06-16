@@ -1,0 +1,13 @@
+.game-of-life {
+  border-collapse: collapse;
+}
+
+.game-of-life td {
+  border: 1px solid #006699;
+  height: 8px;
+  width: 8px;
+}
+
+.game-of-life__cell {
+  background-color: #006699;
+}
